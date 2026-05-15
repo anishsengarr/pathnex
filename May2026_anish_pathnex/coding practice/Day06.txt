@@ -1,0 +1,58 @@
+🚀 Git Basics
+Git → Version Control System (tracks changes in files).
+
+GitHub → Web‑based hosting service for Git repositories.
+
+🛠️ Essential Commands
+git --version → Check Git version.
+
+git status → Show repo state (tracked/untracked, staged changes).
+
+git init → Create a new Git repo in a folder.
+
+git add . → Stage all changes.
+
+git commit -m "msg" → Save changes with a message.
+
+git log → Show commit history.
+
+git branch → List branches.
+
+git switch branch → Switch branches (newer command).
+
+git checkout branch → Switch branches or restore files (older, multi‑purpose).
+
+git stash → Temporarily save changes without committing (useful before switching branches).
+
+🔑 Key Concepts
+Cherry‑pick → Apply a single commit from one branch onto another.
+
+.gitignore → Ignore unwanted files (logs, temp files, etc.).
+
+Conflict → Happens when merging/rebasing changes that overlap; must be resolved manually.
+
+🔄 Pull vs Fetch
+git fetch → Download changes from remote, but don’t merge.
+
+git pull → Fetch + merge automatically.
+
+🔀 Merge vs Rebase
+Merge → Combines branches with a merge commit (safe, keeps history).
+
+Rebase → Moves commits on top of another branch (clean, linear history, but rewrites).
+
+Rule: Merge for collaboration, Rebase for cleanup.
+
+⚡ Hotfix
+Urgent fix applied directly to main/master.
+
+After fixing, merge back into both main and develop to keep aligned.
+
+Usually tagged as a patch release (e.g., v1.0.1).
+
+🧯 Reflog
+git reflog → Shows all HEAD movements (commits, resets, checkouts).
+
+Lets you recover lost commits after reset/rebase.
+
+Think of it as Git’s “safety net.”

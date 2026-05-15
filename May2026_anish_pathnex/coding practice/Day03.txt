@@ -1,0 +1,58 @@
+## k8s create Nginx pod
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pathnex-pod
+spec:
+  containers:
+    - name: web
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+
+
+Ansible Task — Install Nginx on Pathnex Server
+
+-name: Install Nginx on Pathnex server
+  hosts:all
+  become: yes
+
+tasks:
+ -name:Install Nginx
+  yum:
+    name:nginx
+    state:present
+
+task 2: 
+
+-name:  Install and start Nginx on Pathnex
+ hosts:all
+ become: yes 
+tasks:
+  -name: Install nginx
+   yum:
+     name: nginx
+     state:present
+
+
+-name: Enable nginx 
+service:
+  name:nginx 
+   state:started 
+   enabled :yes   
+
+
+   # Terraform files
+
+   provider  "aws" {
+     region = "us-east-1" 
+     }
+   resource "aws_instance" "PathnexEC2" { ami = "ami-0abcd1234abcd1234" instance_type = "r5.2xlarge"
+   tag = { 
+    Name = "Pathnex-Server" 
+    Environment = "Training" 
+    Owner = "PathnexStudent" 
+    } 
+   }
+
