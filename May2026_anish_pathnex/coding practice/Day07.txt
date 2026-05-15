@@ -1,0 +1,152 @@
+Aws:
+
+🌩️ Why Cloud?
+Instead of buying and maintaining your own servers, the cloud lets you rent computing power and storage on demand.
+
+No upfront hardware cost.
+
+Scale up or down easily.
+
+Pay only for what you use.
+
+Access from anywhere.
+
+It solves problems like:
+
+Scalability → handle sudden traffic without crashing.
+
+Reliability → apps keep running even if one server fails.
+
+Security → built-in tools to protect data.
+
+Flexibility → choose services as needed.
+
+🔐 IAM (Identity & Access Management)
+Think of IAM as the security guard for AWS.
+
+Create users, groups, and roles with specific permissions.
+
+Add MFA (extra password via phone/app) for stronger security.
+
+Control who can access which AWS resources.
+
+Track and audit what people are doing.
+
+🌐 VPC (Virtual Private Cloud)
+A VPC is like your own private neighborhood inside AWS.
+
+You decide the IP addresses, subnets, and routes.
+
+Protect communication with security groups & NACLs.
+
+Connect to your office via VPN or Direct Connect.
+
+Spread across multiple zones for high availability.
+
+VPC Peering
+Lets two neighborhoods (VPCs) talk to each other securely.
+
+🚦 NACL (Network Access Control List)
+Think of NACLs as firewall rules for subnets.
+
+Allow or block traffic in/out of a subnet.
+
+Extra layer of security for your network.
+
+🌉 NAT Gateway
+A NAT Gateway is like a translator between private servers and the internet.
+
+Private servers can download updates or send data out.
+
+But outsiders can’t directly reach them.
+
+💻 EC2 (Elastic Compute Cloud)
+EC2 is your virtual computer in the cloud.
+
+Choose CPU, memory, storage, and network settings.
+
+Pricing options: On-demand, Reserved, Spot.
+
+Auto Scaling adjusts resources when traffic changes.
+
+Run Linux, Windows, or custom images.
+
+Works with VPC, S3, IAM for secure setups.
+
+📦 S3 (Simple Storage Service)
+S3 is like an infinite online hard drive.
+
+Store any amount of data, safely and cheaply.
+
+Different storage classes (frequent vs. rare access).
+
+Built-in encryption for security.
+
+Versioning keeps old copies of files.
+
+Easily connects with other AWS services (Lambda, CloudFront, etc.).
+
+👉 In short:
+
+IAM = Who can do what.
+
+VPC = Your private network.
+
+NACL & NAT = Security & internet access rules.
+
+EC2 = Your cloud computer.
+
+S3 = Your cloud storage.
+
+
+🧑‍🏫 1. Amazon Inspector
+Think of this as a security checker for your cloud.
+It scans your computers and applications in AWS to find weak points or missing updates that hackers could use.
+👉 It helps you fix problems before someone attacks.
+
+👮 2. Amazon GuardDuty
+This is like a smart security guard.
+It watches your AWS account all the time, looking for suspicious activity — like someone trying to break in or steal data.
+👉 It alerts you when something looks dangerous.
+
+🚧 3. Web Application Firewall (WAF)
+A firewall for websites.
+It protects your website from bad requests — like hackers sending harmful code or too many messages.
+👉 You set rules to allow good traffic and block bad ones.
+
+🛡️ 4. AWS Shield
+This is extra protection for websites hosted on AWS.
+It defends against DDoS attacks (when hackers flood your site with fake traffic to crash it).
+👉 Shield keeps your site online even during big attacks.
+
+⚡ 5. AWS Lambda
+Lambda runs your code only when needed — no servers to manage.
+Imagine you press a button, and AWS instantly runs your program, then stops.
+👉 It saves money and time because it works automatically when triggered.
+
+📈 6. Auto Scaling Group
+This feature adds or removes servers automatically.
+If your app gets busy, AWS adds more computers; when traffic slows down, it removes extras.
+👉 It keeps your app fast and cost‑efficient.
+
+🐳 7. Amazon EKS (Elastic Kubernetes Service)
+EKS helps you run and manage containers (small packages of apps).
+It uses Kubernetes — a system that organizes many containers so they work together smoothly.
+👉 It’s great for big apps made of many small parts.
+
+👀 8. CloudWatch
+CloudWatch is your monitoring tool.
+It tracks how your AWS resources are performing — CPU usage, memory, errors, etc.
+👉 It helps you see problems early and fix them fast.
+
+📜 9. CloudTrail
+CloudTrail keeps a record of every action in your AWS account — who did what, when, and from where.
+👉 It’s useful for audits, troubleshooting, and security investigations.
+
+🗺️ 10. Route 53
+Route 53 is AWS’s DNS service — it connects website names (like anish.com) to the right servers.
+👉 It also helps balance traffic and keep websites online globally.
+
+🎮 11. Session Manager
+Session Manager lets you connect to your AWS servers securely without using passwords or open ports.
+👉 It’s like remote access — you can manage your machines safely from anywhere.
