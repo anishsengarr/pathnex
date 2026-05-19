@@ -26,3 +26,36 @@ maven-package:
   script:
     - cd sample-java-app
     - mvn package
+
+
+
+## Shell Script — Check Service Running
+
+#!/bin/bash
+SERVICE="sshd"
+
+if systemctl is-active --quiet $SERVICE; then 
+echo "$SERVICE" is running"
+else
+echo "$SERVICE is not running"
+
+fi
+
+   
+## GitLab CI — Rollback Simulation simulate rollback using after_script.
+
+stages:
+  - deploy
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+
+deploy:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - echo "Deploying $INSTITUTE_NAME application"
+    - exit 1
+  after_script:
+    - echo "Deployment failed. Rolling back $INSTITUTE_NAME application" 
+
