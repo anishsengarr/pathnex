@@ -1,1 +1,18 @@
-hey 
+## GitLab CI — Slack Notification
+You will learn how to **notify Slack in GitLab CI**.
+
+stages:
+  - build
+
+variables:
+  INSTITUTE_NAME: "Pathnex"
+  SLACK_WEBHOOK: "https://hooks.slack.com/services/XXXXX/YYYYY/ZZZZZ"
+
+build:
+  stage: build
+  image: maven:3.8.1-jdk-17
+  script:
+    - git clone https://github.com/Pathnex/sample-java-app.git
+    - cd sample-java-app
+    - mvn clean package
+    - curl -X POST -H 'Content-type: application/json' --data '{"text":"Build success for Pathnex"}' $SLACK_WEBHOOK
