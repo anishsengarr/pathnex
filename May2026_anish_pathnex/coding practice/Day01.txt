@@ -1,0 +1,85 @@
+## Ansible Task — Install Nginx on Pathnex Server
+
+
+- name: Install Nginx on Pathnex server
+  hosts: all
+  become: yes
+
+  tasks:
+    - name: Install nginx
+      yum:
+        name: nginx
+        state: present
+
+
+## Terraform Task — Create EC2 (c5.xlarge)
+
+provider "aws"{
+    region =" ap-south-1"
+}
+
+resource "aws_instance" "EC2"{
+ami = "12342556327y4872"
+instance_type= "c5.xlarge"
+
+tags={
+    Name="PathnexEC2"
+}
+}
+
+
+
+## Kubernetes Task — Create Nginx Pod
+
+apiVersion : v1
+kind: pod
+metadata:
+   name: nex-pod
+spec:
+   containers:
+    -name: web
+    image: nginx:latest
+    ports:
+    -containerPort:80
+
+## Shell Script — Print Date & Hostname
+
+#!/bin/bash
+echo ($date)
+echo ($hostname)
+
+
+
+
+## Jenkins Pipeline — Checkout Git
+
+pipeline {
+    agent any
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/Pathnex/app.git'
+            }
+        }
+        stage('List Files') {
+            steps {
+                sh 'ls -la'
+            }
+        }
+    }
+}
+
+
+## GitLab CI — Checkout Git
+
+
+stages:
+  - checkout
+
+git-checkout:
+
+  stage: checkout
+  script:
+    - git clone https://github.com/Pathnex/app.git
+    - cd app
+    - ls -la
