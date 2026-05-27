@@ -74,3 +74,11 @@ docker stats
 # Bash
 
 docker run -d --memory="512m" --cpus="1.0" nginx
+
+## Shell Script — Clean Old Logs
+
+#!/bin/bash
+find /var/log -type f -mtime +7 -exec rm -f {} \;
+echo "Old logs removed."
+
+
