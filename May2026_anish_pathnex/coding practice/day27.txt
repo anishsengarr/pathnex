@@ -1,4 +1,4 @@
-# Serverless Scaling with Lambda and DynamoDB
+# Day27 Serverless Scaling with Lambda and DynamoDB
 
 
 ##Ansible — Deploy Serverless Lambda Functions
@@ -80,5 +80,21 @@ docker run -d --memory="512m" --cpus="1.0" nginx
 #!/bin/bash
 find /var/log -type f -mtime +7 -exec rm -f {} \;
 echo "Old logs removed."
+
+## Kubernetes — NodePort Service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: pathnex-nodeport
+spec:
+  type: NodePort
+  selector:
+    app: pathnex
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30080
+
 
 
