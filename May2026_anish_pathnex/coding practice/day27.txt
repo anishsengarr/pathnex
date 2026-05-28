@@ -1,4 +1,4 @@
-# Day27 Serverless Scaling with Lambda and DynamoDB
+# Serverless Scaling with Lambda and DynamoDB
 
 
 ##Ansible — Deploy Serverless Lambda Functions
